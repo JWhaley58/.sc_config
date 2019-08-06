@@ -16,6 +16,9 @@ plugins=(
 	last-working-dir 
 	colored-man-pages 
 	zsh-autosuggestions
+	autojump
+	zsh-256color
+	alias-tips
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -55,6 +58,8 @@ if [ -f ~/.fzfrc ]; then # Import my fzf cmds if present
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # fzf zsh autocompletion
+
+export PATH=~/Library/Python/3.7/bin:$PATH
 
 # Custom Aliases
 alias lo='locate'
