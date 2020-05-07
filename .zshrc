@@ -23,15 +23,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Custom Functions
-function mongolog() {
-	if [ -f /var/log/mongodb/mongod.log ]; then
-		tail -f /var/log/mongodb/mongod.log
-	else
-		echo "No log file at /var/log/mongodb/mongod.log"
-	fi
-}
-
 function lazygit() {
     git add .
     git commit -a -m "$1"
@@ -44,10 +35,6 @@ function lazypull() {
 	git clean -xffd
 	git pull	
 }
-
-if [ -f ~/.tw_zshrc_confidential ]; then # work specific zsh config
-	source ~/.tw_zshrc_confidential
-fi
 
 if [ -f ~/.fzf/bin/fzf ]; then # Add programs to path if needed
 	path+=~/.fzf/bin/
@@ -76,8 +63,6 @@ alias grep='grep -i --color'
 alias al="cat ~/.zshrc | grep -v '#' | grep alias"
 alias alg="cat ~/.zshrc | grep -v '#' | grep alias | grep "
 alias tree='tree -C'
-alias ß´†˙='echo "this shit works lol"'
-alias ml='mongolog'
 alias ss="./box_jumper.sh"
 alias gah="sudo !!"
 alias sudo='sudo env PATH=$PATH'
@@ -86,6 +71,5 @@ alias svim='sudo vim -u ~/.vimrc'
 alias sc='systemctl'
 alias ssc='sudo systemctl'
 alias rhelpy='scl enable rh-python36 $(which zsh)'
-alias ec2='ssh -i "~/.ssh/EssentialsKP.pem" ec2-user@ec2-34-206-3-50.compute-1.amazonaws.com'
 alias rhyme="python3 ~/scripts/rhyme.py"
 alias vg="vim -c 'Goyo' "
