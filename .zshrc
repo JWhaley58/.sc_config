@@ -1,5 +1,5 @@
 echo "Pulling most recent sc_config"
-cd ~/.sc_config
+cd ~/.config
 git pull
 cd ~
 # Path to your oh-my-zsh installation.

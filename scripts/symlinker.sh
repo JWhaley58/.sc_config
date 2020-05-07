@@ -47,13 +47,13 @@ fi
 # Symlink Custom theme into .oh-my-zsh/
 if [ ! -e ${HOME}/.oh-my-zsh/themes/dstcustom.zsh-theme ]; then
 	echo -e "${YELLOW}creating dstcustom.zsh-theme"
-	ln -s ${HOME}/.sc_config/themes/dstcustom.zsh-theme ${HOME}/.oh-my-zsh/themes/dstcustom.zsh-theme
+	ln -s ${HOME}/.config/themes/dstcustom.zsh-theme ${HOME}/.oh-my-zsh/themes/dstcustom.zsh-theme
 else
 	echo -e "${GREEN} dstcustom.zsh-theme exists in .oh-my-zsh/themes {$NC}"
 	if [ ! -L ${HOME}/.oh-my-zsh/themes/dstcustom.zsh-theme ]; then
 		echo -e "${YELLOW} dstcustom.zsh-theme isn't a simlink, fixing.."
 		rm ${HOME}/.oh-my-zsh/themes/dstcustom.zsh-theme
-		ln -s ${HOME}/.sc_config/themes/dstcustom.zsh-theme ${HOME}/.oh-my-zsh/themes/dstcustom.zsh-theme
+		ln -s ${HOME}/.config/themes/dstcustom.zsh-theme ${HOME}/.oh-my-zsh/themes/dstcustom.zsh-theme
 	else
 		echo -e "${GREEN} dstcustom.zsh-theme is a simlink!{$NC}"
 	fi
@@ -74,13 +74,13 @@ for i in "${arr[@]}"
 do
 	if [ ! -e ${HOME}/$i ]; then
 		echo -e "${YELLOW}creating " $i "${NC}"
-		ln -s .sc_config/$i $i
+		ln -s .config/$i $i
 	else
 		echo -e "${GREEN}" $i " exists {$NC}"
 		if [ ! -L ${HOME}/$i ]; then
 			echo -e "${YELLOW}" $i " is not a symlink ${NC}"
 			rm $i
-			ln -s .sc_config/$i $i
+			ln -s .config/$i $i
 		else
 			echo -e "${GREEN} " $i "  is a symlink${NC}"
 		fi
